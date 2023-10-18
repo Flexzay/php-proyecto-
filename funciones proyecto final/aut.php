@@ -77,7 +77,7 @@ function eliminarUsuario($email)
     $email = mysqli_real_escape_string($conexion, $email);
 
     // Consulta SQL para eliminar usuario
-    $sql = "DELETE FROM perfil WHERE email = '$email'";
+    $sql = "DELETE FROM usuairos WHERE email = '$email'";
 
     if ($conexion->query($sql)) {
         $resultado = "Usuario eliminado correctamente.";

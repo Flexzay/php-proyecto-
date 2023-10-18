@@ -3,8 +3,12 @@
 
 include("incriptar.php");
 
-function registro($email, $contrasena)
+function registro()
 {
+    $email = $_GET['email'];
+    $contrasena = $_GET['contrasena'];
+
+
     $salida = "";
     $conexion = mysqli_connect('localhost', 'root', 'root', 'proyecto_final');
 
@@ -27,6 +31,7 @@ function registro($email, $contrasena)
 
     if ($resultado) {
         $salida = "Registro exitoso";
+        echo "<a href='a1.php'>autenticate</a><br>";
     } else {
         $salida = "Error en el registro: " . $conexion->error;
     }
@@ -37,7 +42,7 @@ function registro($email, $contrasena)
 }
 
 
-echo registro( " ", "");
+echo registro()
 
 
 
